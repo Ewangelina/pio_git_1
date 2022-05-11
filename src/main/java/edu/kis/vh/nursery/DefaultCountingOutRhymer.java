@@ -1,5 +1,8 @@
 package edu.kis.vh.nursery;
 
+/**
+ *
+ */
 public class DefaultCountingOutRhymer
 {
 
@@ -11,6 +14,9 @@ public class DefaultCountingOutRhymer
 
 	private int total = EMPTY;
 
+	/**
+	 * @param in
+	 */
 	public void countIn(int in)
 	{
 		if (!isFull())
@@ -19,16 +25,25 @@ public class DefaultCountingOutRhymer
 		}
 	}
 
+	/**
+	 * @return
+	 */
 	public boolean callCheck()
 	{
 		return total == EMPTY;
 	}
 
+	/**
+	 * @return
+	 */
 	public boolean isFull()
 	{
 		return total == MAX_SIZE - 1;
 	}
 
+	/**
+	 * @return
+	 */
 	protected int peekaboo()
 	{
 		if (callCheck())
@@ -38,6 +53,9 @@ public class DefaultCountingOutRhymer
 		return NUMBERS[total];
 	}
 
+	/**
+	 * @return
+	 */
 	public int countOut()
 	{
 		if (callCheck())

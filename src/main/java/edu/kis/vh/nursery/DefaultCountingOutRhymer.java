@@ -11,10 +11,6 @@ public class DefaultCountingOutRhymer
 
 	private int total = EMPTY;
 
-	public int getTotal() {
-		return total;
-	}
-
 	protected void countIn(int in)
 	{
 		if (!isFull())
@@ -49,9 +45,5 @@ public class DefaultCountingOutRhymer
 			return DEFAULT;
 		}
 		return NUMBERS[total--];
-	}
-
-	public int[] getNUMBERS() {
-		return NUMBERS;
 	}
 }

@@ -8,9 +8,13 @@ public class DefaultCountingOutRhymer
 	public static final int FULL = 11;
 	private int[] NUMBERS = new int[ROZMIAR];
 
-	public int total = TOTAL;
+	private int total = -1;
 
-	public void countIn(int in)
+	public int getTotal() {
+		return total;
+	}
+
+	protected void countIn(int in)
 	{
 		if (!isFull())
 		{
@@ -18,12 +22,12 @@ public class DefaultCountingOutRhymer
 		}
 	}
 
-	public boolean callCheck()
+	protected boolean callCheck()
 	{
 		return total == TOTAL;
 	}
 
-	public boolean isFull()
+	protected boolean isFull()
 	{
 		return total == FULL;
 	}
@@ -37,7 +41,7 @@ public class DefaultCountingOutRhymer
 		return NUMBERS[total];
 	}
 
-	public int countOut()
+	protected int countOut()
 	{
 		if (callCheck())
 		{
@@ -46,4 +50,7 @@ public class DefaultCountingOutRhymer
 		return NUMBERS[total--];
 	}
 
+	public int[] getNUMBERS() {
+		return NUMBERS;
+	}
 }

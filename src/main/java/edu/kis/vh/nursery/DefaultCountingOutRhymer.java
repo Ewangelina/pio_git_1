@@ -3,12 +3,13 @@ package edu.kis.vh.nursery;
 public class DefaultCountingOutRhymer
 {
 
-	public static final int ROZMIAR = 12;
-	public static final int TOTAL = -1;
-	public static final int FULL = 11;
-	private int[] NUMBERS = new int[ROZMIAR];
+	public static final int MAX_SIZE = 12;
+	public static final int EMPTY = -1;
+	public static final int DEFAULT = -1;
 
-	private int total = -1;
+	private final int[] NUMBERS = new int[MAX_SIZE];
+
+	private int total = EMPTY;
 
 	public int getTotal() {
 		return total;
@@ -24,19 +25,19 @@ public class DefaultCountingOutRhymer
 
 	protected boolean callCheck()
 	{
-		return total == TOTAL;
+		return total == EMPTY;
 	}
 
 	protected boolean isFull()
 	{
-		return total == FULL;
+		return total == MAX_SIZE - 1;
 	}
 
 	protected int peekaboo()
 	{
 		if (callCheck())
 		{
-			return TOTAL;
+			return DEFAULT;
 		}
 		return NUMBERS[total];
 	}
@@ -45,7 +46,7 @@ public class DefaultCountingOutRhymer
 	{
 		if (callCheck())
 		{
-			return TOTAL;
+			return DEFAULT;
 		}
 		return NUMBERS[total--];
 	}

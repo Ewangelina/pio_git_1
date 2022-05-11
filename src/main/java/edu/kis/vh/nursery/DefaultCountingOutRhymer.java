@@ -11,7 +11,7 @@ public class DefaultCountingOutRhymer
 
 	private int total = EMPTY;
 
-	protected void countIn(int in)
+	public void countIn(int in)
 	{
 		if (!isFull())
 		{
@@ -19,12 +19,12 @@ public class DefaultCountingOutRhymer
 		}
 	}
 
-	protected boolean callCheck()
+	public boolean callCheck()
 	{
 		return total == EMPTY;
 	}
 
-	protected boolean isFull()
+	public boolean isFull()
 	{
 		return total == MAX_SIZE - 1;
 	}
@@ -38,7 +38,7 @@ public class DefaultCountingOutRhymer
 		return NUMBERS[total];
 	}
 
-	protected int countOut()
+	public int countOut()
 	{
 		if (callCheck())
 		{
